@@ -6,7 +6,22 @@ using System.Threading.Tasks;
 
 namespace BackUrbanPark
 {
-    internal class Utils
+
+    public enum TipoVaga
+    {
+        Carro,
+        Moto,
+        PDC,
+        Idoso
+    }
+
+    public enum TipoStatus
+    {
+        Livre,
+        Ocupado
+    }
+
+    public static class Utils
     {
     }
 }

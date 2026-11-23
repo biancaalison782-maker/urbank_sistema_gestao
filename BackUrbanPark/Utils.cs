@@ -11,14 +11,14 @@ namespace BackUrbanPark
     {
         Carro,
         Moto,
-        PDC,
+        PCD,
         Idoso
     }
 
     public enum TipoStatus
     {
         Livre,
-        Ocupado
+        Ocupada
     }
 
     public static class Utils

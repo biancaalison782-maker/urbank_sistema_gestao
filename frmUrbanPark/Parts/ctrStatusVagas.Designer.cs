@@ -28,48 +28,50 @@
         /// </summary>
         private void InitializeComponent()
         {
-            pictureBox1 = new PictureBox();
-            label1 = new Label();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            picStatusVaga = new PictureBox();
+            lblNumeroVaga = new Label();
+            ((System.ComponentModel.ISupportInitialize)picStatusVaga).BeginInit();
             SuspendLayout();
             // 
-            // pictureBox1
+            // picStatusVaga
             // 
-            pictureBox1.Image = Properties.Resources.carIconVerde;
-            pictureBox1.Location = new Point(48, 54);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(51, 50);
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
+            picStatusVaga.Image = Properties.Resources.carIconVerde;
+            picStatusVaga.Location = new Point(48, 54);
+            picStatusVaga.Name = "picStatusVaga";
+            picStatusVaga.Size = new Size(51, 50);
+            picStatusVaga.TabIndex = 0;
+            picStatusVaga.TabStop = false;
             // 
-            // label1
+            // lblNumeroVaga
             // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.FromArgb(223, 247, 231);
-            label1.Location = new Point(56, 36);
-            label1.Name = "label1";
-            label1.Size = new Size(36, 15);
-            label1.TabIndex = 1;
-            label1.Text = "LIVRE";
-            label1.Click += label1_Click;
+            lblNumeroVaga.BackColor = Color.FromArgb(223, 247, 231);
+            lblNumeroVaga.Dock = DockStyle.Top;
+            lblNumeroVaga.Location = new Point(0, 0);
+            lblNumeroVaga.Name = "lblNumeroVaga";
+            lblNumeroVaga.Size = new Size(150, 34);
+            lblNumeroVaga.TabIndex = 1;
+            lblNumeroVaga.Text = "01";
+            lblNumeroVaga.TextAlign = ContentAlignment.TopCenter;
+            lblNumeroVaga.Click += label1_Click;
             // 
             // ctrStatusVagas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(223, 247, 231);
-            Controls.Add(label1);
-            Controls.Add(pictureBox1);
+            Controls.Add(lblNumeroVaga);
+            Controls.Add(picStatusVaga);
             Name = "ctrStatusVagas";
             Load += ctrStatusVagas_Load;
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picStatusVaga).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
-        private PictureBox pictureBox1;
-        private Label label1;
+        private PictureBox picStatusVaga;
+        private Label lblNumeroVaga;
     }
+
+
 }

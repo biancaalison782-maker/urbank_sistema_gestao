@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace BackUrbanPark.Repository
 {
-    internal class VagaRepository
+    public static class VagaRepository
     {
 
         /// <summary>
@@ -18,12 +18,12 @@ namespace BackUrbanPark.Repository
         /// </summary>
         /// <param name="vaga"></param>
         /// <returns></returns>
-        public int Inserir(Vaga vaga)
+        public static int Inserir(Vaga vaga)
         {
             return 1;
         }
         
-        public Vaga? BuscarPorId(int id)
+        public static Vaga? BuscarPorId(int id)
         {
             string sql = "SELECT id_vaga, numero_vaga, tipo, status FROM vagas WHERES id = @id";
 
@@ -42,7 +42,7 @@ namespace BackUrbanPark.Repository
                 }
             }return null;
         }
-        public List<Vaga> BuscarTodos()
+        public static List<Vaga> BuscarTodos()
         {
             List<Vaga> vagas = new List<Vaga>();
             string sql = "SELECT id_vaga, numero_vaga, tipo, status FROM vagas";
@@ -65,7 +65,7 @@ namespace BackUrbanPark.Repository
         /// <param name="reader"></param>
         /// <returns></returns>
 
-        private Vaga MapearVaga(MySqlDataReader reader)
+        private static Vaga MapearVaga(MySqlDataReader reader)
         {
             int id_vaga = reader.GetInt32("id_vaga");
             int numero_vaga = reader.GetInt32("numero_vaga");

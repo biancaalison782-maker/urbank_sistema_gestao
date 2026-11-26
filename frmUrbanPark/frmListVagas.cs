@@ -22,16 +22,8 @@ namespace frmUrbanPark
 
         private void frmListVagas_Load(object sender, EventArgs e)
         {
-            flwCardVagas.Controls.Clear();
 
-            //Instanciar um novo CardVagas
-
-            ctrStatusVagas cardVaga = new ctrStatusVagas();
-            cardVaga.StatusVaga = StatusVaga.Ocupada;
-            cardVaga.NumeroVaga = 99.ToString();
-
-            flwCardVagas.Controls.Add(cardVaga);
-           
+            carregarDadosEMontarVisualizacao();
 
         }
 
@@ -54,8 +46,34 @@ namespace frmUrbanPark
                 cardVaga.StatusVaga = statusVaga;
                 cardVaga.NumeroVaga = strNumeroVaga;
 
+                cardVaga.CardClicado += cardVaga_click;
+
                 flwCardVagas.Controls.Add(cardVaga);
             }
+        }
+
+        public void cardVaga_click(object sender, EventArgs e)
+        {
+
+            ctrStatusVagas cardSelecionado = (ctrStatusVagas)sender;
+            MessageBox.Show($"Vaga: {cardSelecionado.NumeroVaga} || Status: {cardSelecionado.StatusVaga}");
+
+        }
+        private void flwCardVagas_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_MouseHover(object sender, EventArgs e)
+        {
+            Button b = (Button)sender;
+
+            MessageBox.Show(b.Text);
         }
     }
 }

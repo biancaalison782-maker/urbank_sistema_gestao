@@ -22,6 +22,8 @@ namespace frmUrbanPark.Parts
         private Color _verdeClaro = Color.FromArgb(223, 247, 231);
         private Color _vermelhoClaro = Color.FromArgb(254, 224, 221);
 
+        public event EventHandler CardClicado;
+
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public StatusVaga StatusVaga { get => _statusVaga; set => _statusVaga = value; }
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
@@ -37,6 +39,10 @@ namespace frmUrbanPark.Parts
         private void ctrStatusVagas_Load(object sender, EventArgs e)
         {
             atualizarAparenciaCard();
+
+            this.Click += AoClicarNoCard;
+            this.lblNumeroVaga.Click += AoClicarNoCard;
+            this.picStatusVaga.Click += AoClicarNoCard;
 
         }
 
@@ -65,6 +71,14 @@ namespace frmUrbanPark.Parts
         private void picStatusVaga_Click(object sender, EventArgs e)
         {
 
+        }
+        
+
+        private void AoClicarNoCard(object sender, EventArgs e)
+        {
+
+            //Dispara o evento CardClicado, se houver algum inscrito
+            CardClicado?.Invoke(this, EventArgs.Empty);
         }
 
 

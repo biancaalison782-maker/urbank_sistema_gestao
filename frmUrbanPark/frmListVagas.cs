@@ -56,7 +56,22 @@ namespace frmUrbanPark
         {
 
             ctrStatusVagas cardSelecionado = (ctrStatusVagas)sender;
-            MessageBox.Show($"Vaga: {cardSelecionado.NumeroVaga} || Status: {cardSelecionado.StatusVaga}");
+
+            if (cardSelecionado.StatusVaga == StatusVaga.Livre)
+            {
+                frmRegistrarEntrada frmEntrada = new frmRegistrarEntrada(
+                    cardSelecionado.NumeroVaga,
+                    cardSelecionado.IdVaga
+                    );
+                frmEntrada.ShowDialog();
+            }
+            else
+            {
+              
+
+               
+            }
+                MessageBox.Show($"Vaga: {cardSelecionado.NumeroVaga} || Status: {cardSelecionado.StatusVaga}");
 
         }
         private void flwCardVagas_Paint(object sender, PaintEventArgs e)
